@@ -95,6 +95,11 @@ function play(action) {
     if (element.action == action) userChoice = element;
   });
 
+  if (!userChoice) {
+    alert("Invalid option specified. Please try again with R, P, S, L, K");
+    return;
+  }
+
   // NOTE: There is an easier way to get the userChoice from the array of choices. A loop was used above since that's what we're covering in class,
   // however another ES6 special function can save us a little time. Also, note the ES6 function syntax being used instead of a function(), we've used () => {} function arrow syntax.
 
@@ -186,3 +191,8 @@ function checkDefeated(choice, compareChoice) {
 
 // this gets called as the page loads so that the scorecard displays will be set to 0. We pass in no message, so nothing else happens except the scorecard HTML elements updating with zeros.
 updateScorecard();
+
+// lastly wire up an event listener for keypress on the whole document so no matter where the focus is, the play function can be triggered by pressing a key.
+document.addEventListener("keypress", function(event) {
+  play(event.key);
+});

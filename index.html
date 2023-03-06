@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors ... Lizard Spock</title>
+
+  <script src="https://use.fontawesome.com/bbbffb3a60.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h2>Make a selection to play a round!</h2>
+
+          <p>As Sheldon explains, "Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors."</p>
+
+          <!-- Note the onclick attribute. This lets us hook to our Javascript and call the function specified (which we define in our code) -->
+          <button class="btn btn-secondary btn-lg" onclick="play('r')"><i class="fa fa-fw fa-hand-rock-o"></i> Rock</button>
+          <button class="btn btn-secondary btn-lg" onclick="play('p')"><i class="fa fa-fw fa-hand-paper-o"></i> Paper</button>
+          <button class="btn btn-secondary btn-lg" onclick="play('s')"><i class="fa fa-fw fa-hand-scissors-o"></i> Scissors</button>
+          <button class="btn btn-secondary btn-lg" onclick="play('l')"><i class="fa fa-fw fa-hand-lizard-o"></i> Lizard</button>
+          <button class="btn btn-secondary btn-lg" onclick="play('k')"><i class="fa fa-fw fa-hand-spock-o"></i> Spock</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card bg-success">
+          <div class="card-header">Wins</div>
+          <!-- using an ID here so we can hook to it in Javascript to change as the rounds progress -->
+          <h3 id="wins" class="text-center"></h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-danger">
+          <div class="card-header">Losses</div>
+          <!-- using an ID here so we can hook to it in Javascript to change as the rounds progress -->
+          <h3 id="losses" class="text-center"></h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-warning">
+          <div class="card-header">Ties</div>
+          <!-- using an ID here so we can hook to it in Javascriot to change as the rounds progress -->
+          <h3 id="ties" class="text-center"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mt-5">
+          <div class="card-header"><i class="fa fa-fw fa-history"></i> Round History</div>
+          <div class="card-body">
+            <!-- running history - when the first round is played, this content is overwritten -->
+            <div id="history">
+              No rounds played yet ...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./script.js"></script>
+
+</body>
+
+</html>
